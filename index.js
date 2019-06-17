@@ -46,7 +46,7 @@ app.post('/api/token', function (req, res) {
 });
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')));
-app.get('/api/getClient', (req, res) => res.sendFile(path.join(__dirname + '/client-mobile-chat-dc60b0a5cf4847809341249e29857bd3-signed.apk')));
+app.get('/api/getClient', (req, res) => res.sendFile(path.join(__dirname + '/client-mobile-chat-30dcebca8ece4deaaeb125282d7a4e9f-signed.apk')));
 
 const port = process.env.PORT || 8088;
 app.listen(port, function () {
