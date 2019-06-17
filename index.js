@@ -1,8 +1,9 @@
 const app = require('express')();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const users = require('./users');
+const path = require('path');
 const jwt = require('jsonwebtoken');
+const users = require('./users');
 
 app.use(cors({ origin: '*' }))
 app.use(bodyParser.json());
@@ -43,6 +44,9 @@ app.post('/api/token', function (req, res) {
     res.status(200).send({ status: 'ok', token: jwt.sign({ login, password }, secret) }) :
     res.status(500).send({ error: 'Access denied' });
 });
+
+app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')));
+app.get('/api/getClient', (req, res) => res.sendFile(path.join(__dirname + '/client-mobile-chat-dc60b0a5cf4847809341249e29857bd3-signed.apk')));
 
 const port = process.env.PORT || 8088;
 app.listen(port, function () {
