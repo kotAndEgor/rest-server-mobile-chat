@@ -44,7 +44,7 @@ app.post('/api/token', function (req, res) {
     res.status(500).send({ error: 'Access denied' });
 });
 
-const port = 8088;
+const port = process.env.PORT || 8088;
 app.listen(port, function () {
   console.log(`Rest-server listening on ${port}`);
 });

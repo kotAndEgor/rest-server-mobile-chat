@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
 });
 
 const io = require('socket.io')(server);
-const port = 3000;
+const port = process.env.PORT || 3000;
 server.listen(port, (err) => {
   if (err) { return console.log('something bad happened', err); };
   console.log(`Sockets-server listening on ${port}`);
