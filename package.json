@@ -4,11 +4,8 @@
   "description": "server-mobile-chat",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js & node index-socket.js",
-    "server:prod": "node index.js & node index-socket.js",
-    "server:dev": "nodemon index.js",
-    "socket:dev": "nodemon index-socket.js",
-    "server-socket:dev": "npm run socket:dev & npm run server:dev",
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "KonstantinLoginov",
